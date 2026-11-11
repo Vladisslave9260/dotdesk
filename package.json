@@ -1,0 +1,33 @@
+{
+  "name": "dotdesk",
+  "version": "0.1.0",
+  "description": "Виджеты и своя панель задач для рабочего стола Windows",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win"
+  },
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^25.0.0"
+  },
+  "build": {
+    "appId": "dev.dotdesk.app",
+    "files": [
+      "main.js",
+      "preload.js",
+      "media.ps1",
+      "renderer/**/*"
+    ],
+    "asarUnpack": [
+      "media.ps1"
+    ],
+    "win": {
+      "target": [
+        "portable"
+      ]
+    },
+    "productName": "Dotdesk"
+  },
+  "author": "Dotdesk"
+}
